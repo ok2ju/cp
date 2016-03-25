@@ -2,7 +2,7 @@
 
 .navbar {
   height: 6.5rem;
-  background-color: $primaryColor;
+  background-color: #0277bd;
   padding: 1rem;
 
   .nav-links, 
@@ -10,13 +10,13 @@
     display: inline-block;
   }
   .logo {
-    color: $lightTextColor;
+    color: #f5f5f5;
     margin-right: 50%;
   }
     
   .nav-links {
     span {
-      color: $lightTextColor;
+      color: #f5f5f5;
       font-size: 1.6rem;
     }
   }

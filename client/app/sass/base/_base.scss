@@ -1,0 +1,56 @@
+html {
+  box-sizing: border-box;
+  font-size: 50%;
+
+  @include susy-media($medium) {
+    font-size: 62.5%;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  @include font-smoothing;
+  background-color: $body-color;
+  color: $primary-font-color;
+  font-family: $primary-font;
+  font-size: $font-size-base;
+  text-rendering: optimizeLegibility;
+  letter-spacing: .075em;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  vertical-align: middle;
+}
+
+img,
+video,
+canvas {
+  max-width: 100%;
+}
+
+iframe {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}

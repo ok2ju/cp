@@ -2,7 +2,7 @@ function SegmentsController(Upload, $timeout, $scope) {
   const vm = this;
 
   $scope.$watch('files', function () {
-        $scope.upload(vm.files);
+        vm.upload(vm.files);
     });
     $scope.$watch('file', function () {
         if (vm.file != null) {
@@ -41,5 +41,7 @@ function SegmentsController(Upload, $timeout, $scope) {
         }
     };
 }
+
+SegmentsController.$inject = ['Upload', '$timeout', '$scope'];
 
 export default SegmentsController;

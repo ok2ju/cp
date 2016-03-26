@@ -1,15 +1,24 @@
 var path    = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {},
   module: {
     loaders: [
-       { test: /\.js$/, exclude: [/app\/lib/, /node_modules/], loader: 'ng-annotate!babel' },
-       { test: /\.html$/, loader: 'raw' },
-       { test: /\.scss$/, loader: 'style!css!sass' },
-       { test: /\.css$/, loader: 'style!css' }
+      { test: /\.js$/, exclude: [/app\/lib/, /node_modules/], loader: 'ng-annotate!babel' },
+      { test: /\.html$/, loader: 'raw' },
+      { test: /\.scss$/, loader: ExtractTextPlugin.extract(['css', 'sass']) },
+      {
+        test: /\.(eot|ttf|svg|woff|woff2)$/,
+        loader: 'file?name=/fonts/[name].[ext]?[hash]'
+      },
+      {
+        test: /\.(png|jpg|gif|svg)$/,
+        loader: 'file?name=/images/img-[hash:6].[ext]'
+      }
     ]
   },
   plugins: [
@@ -29,6 +38,13 @@ module.exports = {
       minChunks: function (module, count) {
         return module.resource && module.resource.indexOf(path.resolve(__dirname, 'client')) === -1;
       }
-    })
+    }),
+
+    new ExtractTextPlugin('styles.css'),
+
+    new CopyWebpackPlugin([{
+      from: './client/assets/img',
+      to: './images/'
+    }])
   ]
 };

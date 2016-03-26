@@ -13,11 +13,11 @@ module.exports = {
       { test: /\.scss$/, loader: ExtractTextPlugin.extract(['css', 'sass']) },
       {
         test: /\.(eot|ttf|svg|woff|woff2)$/,
-        loader: 'file?name=/fonts/[name].[ext]?[hash]'
+        loader: 'file?name=/fonts/[name].[ext]'
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
-        loader: 'file?name=/images/img-[hash:6].[ext]'
+        loader: 'file?name=/images/[name].[ext]'
       }
     ]
   },
@@ -43,7 +43,7 @@ module.exports = {
     new ExtractTextPlugin('styles.css'),
 
     new CopyWebpackPlugin([{
-      from: './client/assets/img',
+      from: './client/app/assets/img',
       to: './images/'
     }])
   ]

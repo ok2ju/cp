@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "gulp",
+    "build": "gulp webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Alexey Vakulich",

@@ -16,7 +16,7 @@
       ngf-pattern="'.mp3, .wav, .ogg'">
         <ul class="segments">
           <li ng-repeat="f in vm.files" class="segments__item segment">
-            <img src="../../assets/img/MP3-48.png">
+            <img src="images/MP3-48.png">
             <p class="segment__name">{{f.name}} {{f.$error}} {{f.$errorParam}}</p>
             <div class="progress" ng-show="f.progress >= 0">
               <div class="bar" style="width: {{f.progress}}%;"></div>

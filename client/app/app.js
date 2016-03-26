@@ -3,7 +3,6 @@ import uiRouter from 'angular-ui-router';
 import Common from './common/common';
 import Components from './components/components';
 import AppComponent from './app.component';
-import './sass/style.scss'; 
 
 angular.module('app', [
     uiRouter,

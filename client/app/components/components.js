@@ -1,8 +1,8 @@
 import angular from 'angular';
-import Home from './segments/segments';
+import Segments from './segments/segments';
 
 let componentModule = angular.module('app.components', [
-  Home.name
+  Segments.name
 ]);
 
 export default componentModule;

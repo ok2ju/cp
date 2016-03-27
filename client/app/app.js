@@ -13,7 +13,7 @@ angular.module('app', [
     Components.name,
     Resources.name
   ])
-  .config(($locationProvider, RestangularProvider) => {
+  .config(($locationProvider, $stateProvider, RestangularProvider) => {
     "ngInject";
 
     RestangularProvider.setBaseUrl('http://56f781f97cd9c81100dd8f8e.mockapi.io/api/v1');
@@ -21,6 +21,11 @@ angular.module('app', [
     RestangularProvider.setRestangularFields({
       id: "_id"
     });
+
+    $stateProvider
+      .state('home', {
+        url: '/'
+      });
 
     $locationProvider.html5Mode(true).hashPrefix('!');
   })

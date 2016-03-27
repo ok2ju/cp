@@ -1,5 +1,12 @@
 <h1>Segment Details</h1>
 <p>{{vm.segment.id}}</p>
-<p>{{vm.segment.fieldName}}</p>
-<p>{{vm.segment.name}}</p>
-<p>{{vm.segment.size}}</p>
+<p>
+  <input ng-model="vm.segment.fieldName" type="text">
+</p>
+<p>
+  <input ng-model="vm.segment.name" type="text">
+</p>
+<p>
+  <input ng-model="vm.segment.size" type="text">
+</p>
+<a ng-click="vm.updateSegment(vm.segment.id)">Update</a>

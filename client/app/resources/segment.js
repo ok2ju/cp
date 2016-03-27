@@ -8,7 +8,8 @@ let segmentResourceModule = angular.module('segmentResource', [])
     let service = {
       create: create,
       one: one,
-      list: list
+      list: list,
+      update: update
     };
 
     function create(obj) {
@@ -21,6 +22,10 @@ let segmentResourceModule = angular.module('segmentResource', [])
 
     function list(query) {
       return Restangular.all('segments').getList(query || {});
+    }
+
+    function update(id, data) {
+      return Restangular.one('segments', id).customPUT(data);
     }
 
     return service;

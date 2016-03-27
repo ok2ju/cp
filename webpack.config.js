@@ -45,6 +45,10 @@ module.exports = {
     new CopyWebpackPlugin([{
       from: './client/app/assets/img',
       to: './images/'
-    }])
+    }]),
+
+    new webpack.ProvidePlugin({
+      '_': 'lodash'
+    })
   ]
 };

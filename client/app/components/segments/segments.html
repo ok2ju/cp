@@ -15,7 +15,7 @@
       accept="audio/*" 
       ngf-pattern="'.mp3, .wav, .ogg'">
         <ul class="segments">
-          <li ng-repeat="f in vm.files" class="segments__item segment">
+          <li ng-repeat="f in vm.files" ui-sref="segments.detail({id: f.id})" class="segments__item segment">
             <img src="images/MP3-48.png">
             <p class="segment__name">{{f.name}} {{f.$error}} {{f.$errorParam}}</p>
             <div class="progress" ng-show="f.progress >= 0 && f.progress < 100">
@@ -27,4 +27,7 @@
       </div>
     <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
   </div>
+
+  <div ui-view="detail"></div>
 </main>
+

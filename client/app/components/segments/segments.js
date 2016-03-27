@@ -18,6 +18,13 @@ let segmentsModule = angular.module('segments', [
     .state('segments', {
       url: '/segments',
       template: template,
+      resolve: {
+        segmentsResource: 'segmentsResource',
+
+        segments(segmentsResource) {
+          return segmentsResource.list();
+        }
+      },
       controller: 'SegmentsController',
       controllerAs: 'vm'
     })

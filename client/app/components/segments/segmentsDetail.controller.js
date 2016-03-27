@@ -1,10 +1,10 @@
-function SegmentsDetailController($stateParams, segmentsResource) {
+function SegmentsDetailController($stateParams, segments) {
   "ngInject";
 
   const vm = this;
 
-  segmentsResource.one($stateParams.id).then((segment) => {
-    vm.segment = segment;
+  vm.segment = _.find(segments, (o) => {
+    return o.id === $stateParams.id;
   });
 }
 

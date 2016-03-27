@@ -1,11 +1,9 @@
-function SegmentsController(Upload, $timeout, $scope, segmentsResource) {
+function SegmentsController(Upload, $timeout, $scope, segments) {
   "ngInject";
 
   const vm = this;
 
-  segmentsResource.list().then(function(segments) {
-    vm.files = segments;
-  });
+  vm.files = segments;
 
   vm.upload = function (files) {
       /*vm.files = files;*/

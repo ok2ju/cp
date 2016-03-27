@@ -43,7 +43,7 @@ module.exports = {
     new ExtractTextPlugin('styles.css'),
 
     new CopyWebpackPlugin([{
-      from: './client/app/assets/img',
+      from: './client/assets/img',
       to: './images/'
     }]),
 

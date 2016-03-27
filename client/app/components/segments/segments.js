@@ -1,7 +1,6 @@
 import angular from 'angular';
 /*import uiRouter from 'angular-ui-router';
 import fileUpload from 'ng-file-upload';*/
-import 'ng-file-upload';
 import template from './segments.html';
 import segmentsController from './segments.controller';
 

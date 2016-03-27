@@ -1,6 +1,7 @@
 import angular from 'angular';
 import 'angular-ui-router';
 import 'restangular';
+import 'ng-file-upload';
 import Common from './common/common';
 import Components from './components/components';
 import Resources from './resources/resources';

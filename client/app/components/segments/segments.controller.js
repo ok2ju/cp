@@ -1,4 +1,6 @@
 function SegmentsController(Upload, $timeout, $scope) {
+  "ngInject";
+
   const vm = this;
 
   vm.upload = function (files) {
@@ -28,7 +30,5 @@ function SegmentsController(Upload, $timeout, $scope) {
     });
   };
 }
-
-SegmentsController.$inject = ['Upload', '$timeout', '$scope'];
 
 export default SegmentsController;

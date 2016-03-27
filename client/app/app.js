@@ -8,14 +8,15 @@ import Resources from './resources/resources';
 import AppComponent from './app.component';
 
 angular.module('app', [
-    'ui.router',
     'restangular',
+    'ui.router',
     Common.name,
     Components.name,
     Resources.name
   ])
   .config(($locationProvider, RestangularProvider) => {
     "ngInject";
+    
     RestangularProvider.setBaseUrl('http://56f781f97cd9c81100dd8f8e.mockapi.io/api/v1');
     RestangularProvider.setRestangularFields({
       id: "_id"

@@ -3,6 +3,8 @@ import angular from 'angular';
 let segmentResourceModule = angular.module('segments', [])
 
 .factory('segmentsResource', (Restangular) => {
+  "ngInject";
+  
   let service = {
     create: create,
     one: one,

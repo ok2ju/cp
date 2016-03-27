@@ -6,9 +6,10 @@ function SegmentsController(Upload, $timeout, $scope, segments) {
   vm.files = segments;
 
   vm.upload = function (files) {
-      /*vm.files = files;*/
+    /*vm.files = files;*/
 
     angular.forEach(files, (file) => {
+      vm.files.push(file);
       file.upload = Upload.upload({
         url: 'https://angular-file-upload-cors-srv.appspot.com/upload',
         data: { 

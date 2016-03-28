@@ -26,10 +26,29 @@ angular.module('app', [
 
     $stateProvider
       .state('home', {
-        template: '<div ui-view></div>'
+        url: '/',
+        template: '<div ui-view></div>',
+        resolve: {
+          segmentsResource: 'segmentsResource',
+
+          segments(segmentsResource) {
+            return segmentsResource.list();
+          }
+        },
+        redirectTo: 'home.segments',
       });
 
     $locationProvider.html5Mode(true).hashPrefix('!');
+  })
+  .run(($rootScope, $state) => {
+    "ngInject";
+
+    $rootScope.$on('$stateChangeStart', function(e, to, params) {
+      if(to.redirectTo) {
+        e.preventDefault();
+        $state.go(to.redirectTo, params);
+      }
+    });
   })
 
   .component('app', AppComponent);

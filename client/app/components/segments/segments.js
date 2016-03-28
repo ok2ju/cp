@@ -16,15 +16,8 @@ let segmentsModule = angular.module('segments', [
 
   $stateProvider
     .state('home.segments', {
-      url: '/segments',
+      url: 'segments',
       template: template,
-      resolve: {
-        segmentsResource: 'segmentsResource',
-
-        segments(segmentsResource) {
-          return segmentsResource.list();
-        }
-      },
       controller: 'SegmentsController',
       controllerAs: 'vm'
     })

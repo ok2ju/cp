@@ -1,4 +1,7 @@
 <main>
+  <div class="segment-filter">
+    <input ng-model="searchText" type="text">
+  </div>
   <div>
     <button 
       class="button"
@@ -15,7 +18,7 @@
       accept="audio/*" 
       ngf-pattern="'.mp3, .wav, .ogg'">
         <ul class="segments">
-          <li ng-repeat="f in vm.files" ui-sref="segments.detail({id: f.id})" class="segments__item segment">
+          <li ng-repeat="f in vm.files | filter:searchText" ui-sref="segments.detail({id: f.id})" class="segments__item segment">
             <img src="images/MP3-48.png">
             <p class="segment__name">{{f.name}} {{f.$error}} {{f.$errorParam}}</p>
             <div class="progress" ng-show="f.progress >= 0 && f.progress < 100">

@@ -1,13 +1,17 @@
-<h1>Segment Details</h1>
-<p>{{vm.segment.id}}</p>
-<p>
-  <input ng-model="vm.segment.fieldName" type="text">
-</p>
-<p>
-  <input ng-model="vm.segment.name" type="text">
-</p>
-<p>
-  <input ng-model="vm.segment.size" type="text">
-</p>
-<tags-input ng-model="vm.segment.tags"></tags-input>
-<a ng-click="vm.updateSegment(vm.segment.id)">Update</a>
+<fieldset class="segment-detail">
+  <legend class="segment-detail__legend">Segment Details:</legend>
+
+  <p>{{vm.segment.id}}</p>
+  <p>
+    <input ng-model="vm.segment.fieldName" type="text">
+  </p>
+  <p>
+    <input ng-model="vm.segment.name" type="text">
+  </p>
+  <p>
+    <input ng-model="vm.segment.size" type="text">
+  </p>
+  <tags-input ng-model="vm.segment.tags"></tags-input>
+  <a ng-click="vm.updateSegment(vm.segment.id)">Update</a>
+
+</fieldset>

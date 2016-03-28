@@ -11,13 +11,11 @@ let segmentsModule = angular.module('segments', [
   'ngTagsInput'
 ])
 
-.config(($stateProvider, $urlRouterProvider) => {
+.config(($stateProvider) => {
   "ngInject";
 
-  $urlRouterProvider.otherwise('/');
-
   $stateProvider
-    .state('segments', {
+    .state('home.segments', {
       url: '/segments',
       template: template,
       resolve: {
@@ -30,7 +28,7 @@ let segmentsModule = angular.module('segments', [
       controller: 'SegmentsController',
       controllerAs: 'vm'
     })
-    .state('segments.detail', {
+    .state('home.segments.detail', {
       url: '/:id',
       views: {
         'detail': {

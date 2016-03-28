@@ -5,41 +5,15 @@ import podcastController from './podcast.controller';
 
 let podcastModule = angular.module('podcast', [])
 
-.config(($stateProvider, $urlRouterProvider) => {
+.config(($stateProvider) => {
   "ngInject";
 
-  $urlRouterProvider.otherwise('/');
-
   $stateProvider
-    .state('podcast', {
+    .state('home.podcast', {
       url: '/podcast',
       template: template
     });
 
-  /*$stateProvider
-    .state('segments', {
-      url: '/segments',
-      template: template,
-      resolve: {
-        segmentsResource: 'segmentsResource',
-
-        segments(segmentsResource) {
-          return segmentsResource.list();
-        }
-      },
-      controller: 'SegmentsController',
-      controllerAs: 'vm'
-    })
-    .state('segments.detail', {
-      url: '/:id',
-      views: {
-        'detail': {
-          template: segmentDetails,
-          controller: 'SegmentsDetailController',
-          controllerAs: 'vm'
-        }
-      }
-    });*/
 })
 
 .controller('PodcastController', podcastController);

@@ -1,0 +1,13 @@
+.track {
+  @include clearfix;
+  height: 150px;
+  background: #f1f1f1;
+  border: 2px solid #000;
+  list-style: none;
+}
+
+.track__item {
+  float: left;
+  text-align: center;
+  margin: 0 5px;
+}

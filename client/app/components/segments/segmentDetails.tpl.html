@@ -11,7 +11,9 @@
   <p>
     <input ng-model="vm.segment.size" type="text">
   </p>
-  <tags-input ng-model="vm.segment.tags"></tags-input>
+  <tags-input ng-model="vm.segment.tags">
+    <auto-complete source="vm.loadTags($query)"></auto-complete>
+  </tags-input>
   <a ng-click="vm.updateSegment(vm.segment.id)">Update</a>
 
 </fieldset>

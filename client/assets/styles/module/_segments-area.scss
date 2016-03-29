@@ -113,6 +113,16 @@
 
 // test
 
+ul[dnd-list],
+ul[dnd-list] > li {
+  position: relative;
+}
+
+ul[dnd-list] > li {
+  -webkit-user-drag: element;
+  -webkit-user-select: none; 
+}
+
 .advancedDemo ul[dnd-list],
 .advancedDemo ul[dnd-list] > li {
   position: relative;

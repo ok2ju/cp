@@ -109,3 +109,56 @@
       width: 100%
   }
 }
+
+
+// test
+
+.advancedDemo ul[dnd-list],
+.advancedDemo ul[dnd-list] > li {
+  position: relative;
+}
+
+.advancedDemo .dropzone ul[dnd-list] {
+  min-height: 42px;
+  margin: 0px;
+  padding-left: 0px;
+}
+
+.advancedDemo .dropzone li {
+  display: block;
+}
+
+.advancedDemo .dropzone .dndDragging {
+  opacity: .7;
+}
+
+.advancedDemo .dropzone .dndDraggingSource {
+  display: none;
+}
+
+.advancedDemo .dropzone .dndPlaceholder {
+  background-color: #ddd !important;
+  min-height: 42px;
+  display: block;
+  position: relative;
+}
+
+.advancedDemo .dropzone .itemlist {
+  min-height: 120px !important;
+}
+
+.advancedDemo .dropzone .itemlist > li {
+  border: none;
+  border-radius: .25em;
+  float: left;
+  font-weight: 700;
+  height: 70px;
+  margin: 5px;
+  padding: 3px;
+  text-align: center;
+  width: 70px;
+}
+
+.advancedDemo .dropzone .container-element {
+  margin: 10px;
+}

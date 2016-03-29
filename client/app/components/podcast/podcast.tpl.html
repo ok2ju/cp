@@ -1,26 +1,25 @@
 <h1>Create Podcast</h1>
-<div>
-  <ul dnd-list="vm.segments" class="segments">
-    <li ng-repeat="segment in vm.segments"
-        dnd-draggable="segment"
-        dnd-moved="vm.segments.splice($index, 1)"
-        dnd-effect-allowed="copy"
-        dnd-selected="models.selected = segment"
-        ng-class="{'selected': models.selected === segment}"
-        class="segments__item segment">
-      <img src="images/MP3-48.png">
-      <p class="segment__name">{{segment.name}} {{segment.$error}} {{segment.$errorParam}}</p>
-    </li>
-  </ul>
-  <ul dnd-list="vm.tracks" class="track">
-    <li ng-repeat="track in vm.tracks"
-        dnd-draggable="track"
-        dnd-moved="vm.tracks.splice($index, 1)"
-        dnd-selected="models.selected = track"
-        ng-class="{'selected': models.selected === track}"
-        class="track__item">
-      <img src="images/MP3-48.png">
-      <p class="segment__name">{{track.name}} {{track.$error}} {{track.$errorParam}}</p>
-    </li>
-  </ul>
+<div class="advancedDemo">
+  <div class="dropzone">
+    <ul dnd-list="vm.segments"
+        dnd-drop="vm.dropCallback(event, index, item, external, type, 'containerType')"
+        class="segments itemlist">
+      <li ng-repeat="segment in vm.segments"
+          dnd-draggable="segment"
+          dnd-effect-allowed="copy"
+          class="segments__item segment">
+        <img src="images/MP3-48.png">
+        <p class="segment__name">{{segment.name}} {{segment.$error}} {{segment.$errorParam}}</p>
+      </li>
+    </ul>
+    <ul dnd-list="vm.tracks" class="track itemlist">
+      <li ng-repeat="track in vm.tracks"
+          dnd-draggable="track"
+          dnd-moved="vm.tracks.splice($index, 1)"
+          class="track__item">
+        <img src="images/MP3-48.png">
+        <p class="segment__name">{{track.name}} {{track.$error}} {{track.$errorParam}}</p>
+      </li>
+    </ul>
+  </div>
 </div>

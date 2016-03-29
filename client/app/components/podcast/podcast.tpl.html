@@ -1,4 +1,10 @@
 <h1>Create Podcast</h1>
+<div>
+  <input type="text" placeholder="New Untitled Podcast">
+</div>
+<div>
+  <input type="text" placeholder="Quick Filter">
+</div>
 <div class="advancedDemo">
   <div class="dropzone">
     <ul dnd-list="vm.segments"
@@ -18,9 +24,11 @@
           dnd-moved="vm.tracks.splice($index, 1)"
            dnd-dragend="vm.dragEndCallback(event, dropEffect)"
           class="track__item">
-        <img src="images/MP3-48.png">
         <p class="segment__name">{{track.name}} {{track.$error}} {{track.$errorParam}}</p>
       </li>
     </ul>
   </div>
+</div>
+<div>
+  <a href="#">Publish</a>
 </div>

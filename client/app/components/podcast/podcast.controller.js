@@ -6,29 +6,28 @@ function PodcastController(segments) {
   vm.segments = segments;
   vm.tracks = [];
   vm.dropCallback = dropCallback;
+  vm.dragEndCallback = dragEndCallback;
 
 
   function dropCallback(event, index, item, external, type, allowedType) {
-      console.log('event:');
-      console.log(event);
-      console.log('index:');
-      console.log(index);
-      console.log('external:');
-      console.log(external);
-      console.log('type:');
-      console.log(type);
-      console.log('item');
-      console.log(item);
-      var index = _.findIndex(vm.segments, (o) => {
-        return o.id === item.id;
-      });
+    let indexItem = _.findIndex(vm.segments, (o) => {
+      return o.id === item.id;
+    });
 
-      if(index >= 0) {
-        vm.segments.splice(index, 1);
-      } 
-      
-      return item;
-  };
+    if(indexItem >= 0) {
+      vm.segments.splice(indexItem, 1);
+    } 
+
+    return item;
+  }
+
+  function dragEndCallback(event, dropEffect) {
+    console.log('event');
+    console.log(event);
+    console.log('dropEffect');
+    console.log(dropEffect);
+    console.log(vm.tracks);
+  }
 }
 
 export default PodcastController;

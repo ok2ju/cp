@@ -1,9 +1,3 @@
-/*class NavbarController {
-  constructor() {
-    this.name = 'AppName';
-  }
-}*/
-
 function NavbarController($rootScope) {
   "ngInject";
 

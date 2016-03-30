@@ -16,7 +16,10 @@ let podcastModule = angular.module('podcast', [
       url: 'podcast',
       template: template,
       controller: 'PodcastController',
-      controllerAs: 'vm'
+      controllerAs: 'vm',
+      data: {
+        pageTitle: 'Create podcast'
+      }
     });
 
 })

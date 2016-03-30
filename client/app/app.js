@@ -49,6 +49,12 @@ angular.module('app', [
         $state.go(to.redirectTo, params);
       }
     });
+
+    $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+      if (angular.isDefined(toState.data.pageTitle)) {
+        $rootScope.pageName = toState.data.pageTitle;
+      }
+    });
   })
 
   .component('app', AppComponent);

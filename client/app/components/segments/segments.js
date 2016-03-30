@@ -19,7 +19,10 @@ let segmentsModule = angular.module('segments', [
       url: 'segments',
       template: template,
       controller: 'SegmentsController',
-      controllerAs: 'vm'
+      controllerAs: 'vm',
+      data: {
+        pageTitle: 'Segments'
+      }
     })
     .state('home.segments.detail', {
       url: '/:id',

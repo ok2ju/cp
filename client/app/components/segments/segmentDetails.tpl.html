@@ -2,15 +2,15 @@
   <legend class="segment-detail__legend">Segment Details:</legend>
 
   <p>{{vm.segment.id}}</p>
-  <p>
+  <div class="ui-input">
     <input ng-model="vm.segment.fieldName" type="text">
-  </p>
-  <p>
+  </div>
+  <div class="ui-input">
     <input ng-model="vm.segment.name" type="text">
-  </p>
-  <p>
+  </div>
+  <div class="ui-input">
     <input ng-model="vm.segment.size" type="text">
-  </p>
+  </div>
   <tags-input ng-model="vm.segment.tags">
     <auto-complete source="vm.loadTags($query)"></auto-complete>
   </tags-input>

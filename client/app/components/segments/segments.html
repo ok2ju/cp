@@ -1,36 +1,43 @@
 <main>
   <div class="segment-filter">
-    <input ng-model="searchText" type="text">
-  </div>
-  <div>
+    <div class="ui-input">
+      <input ng-model="searchText" type="text" placeholder="Quick filter...">
+    </div>
     <button 
       class="button"
       accept="audio/*"
       ngf-pattern="'.mp3, .wav, .ogg'"
       ngf-select="vm.upload($files)"
       ngf-multiple="true">Select File</button>
-    <div 
-      ngf-drop="vm.upload($files)"
-      class="drop-box" 
-      ngf-drag-over-class="'dragover'" 
-      ngf-multiple="true" 
-      ngf-allow-dir="false"
-      accept="audio/*" 
-      ngf-pattern="'.mp3, .wav, .ogg'">
-        <ul class="segments">
-          <li ng-repeat="f in vm.files | filter:searchText" ui-sref="home.segments.detail({id: f.id})" ui-sref-active="active" class="segments__item segment">
-            <img src="images/MP3-48.png">
-            <p class="segment__name">{{f.name}} {{f.$error}} {{f.$errorParam}}</p>
-            <div class="progress" ng-show="f.progress >= 0 && f.progress < 100">
-              <div class="bar" style="width: {{f.progress}}%;"></div>
-              <div class="label">{{f.progress}}%</div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+  </div>
+  <div class="segment-body">
+  
+    <div class="segment-body__droparea">
+      <div 
+        ngf-drop="vm.upload($files)"
+        class="drop-box" 
+        ngf-drag-over-class="'dragover'" 
+        ngf-multiple="true" 
+        ngf-allow-dir="false"
+        accept="audio/*" 
+        ngf-pattern="'.mp3, .wav, .ogg'">
+          <ul class="segments">
+            <li ng-repeat="f in vm.files | filter:searchText" ui-sref="home.segments.detail({id: f.id})" ui-sref-active="active" class="segments__item segment">
+              <img src="images/MP3-48.png">
+              <p class="segment__name">{{f.name}} {{f.$error}} {{f.$errorParam}}</p>
+              <div class="progress" ng-show="f.progress >= 0 && f.progress < 100">
+                <div class="bar" style="width: {{f.progress}}%;"></div>
+                <div class="label">{{f.progress}}%</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+      <div ui-view="detail"></div>
+    </div>
+
+    <div class="segment-body__filterarea"></div>
+    
   </div>
 
-  <div ui-view="detail"></div>
 </main>
-

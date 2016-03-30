@@ -1,0 +1,15 @@
+.ui-input {
+  position: relative;
+  color: rgba(0, 0, 0, .87);
+  margin-bottom: 15px;
+
+  input {
+    font-size: 1.3rem;
+    max-width: 100%;
+    outline: none;
+    background: #fff;
+    border-radius: 3px;
+    border: 1px solid rgba(34, 36, 38, .15);
+    padding: 8px 10px;;
+  }
+}

@@ -2,8 +2,10 @@
 <div class="app">
   <navbar></navbar>
   <div class="container">
-    <a ui-sref="home.segments">Segments Section</a>
-    <a ui-sref="home.podcast">Create Podcast</a>
+    <div class="form-row">
+      <a ui-sref="home.segments" class="btn btn--warning">Segments Section</a>
+      <a ui-sref="home.podcast" class="btn btn--warning">Create Podcast</a>
+    </div>
   </div>
   
   <div ui-view class="container"></div>

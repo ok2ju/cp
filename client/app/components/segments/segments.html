@@ -1,17 +1,19 @@
 <main>
   <div class="segment-filter">
-    <div class="ui-input">
+    <div class="ui-input pull-left">
       <input ng-model="searchText" type="text" placeholder="Quick filter...">
     </div>
-    <button 
-      class="button"
+    <div class="select-btn pull-right">
+      <button 
+      class="btn btn--default"
       accept="audio/*"
       ngf-pattern="'.mp3, .wav, .ogg'"
       ngf-select="vm.upload($files)"
       ngf-multiple="true">Select File</button>
+    </div>
   </div>
   <div class="segment-body">
-  
+
     <div class="segment-body__droparea">
       <div 
         ngf-drop="vm.upload($files)"

@@ -2,18 +2,21 @@
   <legend class="segment-detail__legend">Segment Details:</legend>
 
   <p>{{vm.segment.id}}</p>
-  <div class="ui-input">
+  <div class="ui-input form-row">
+    <label for="">Field name</label>
     <input ng-model="vm.segment.fieldName" type="text">
   </div>
-  <div class="ui-input">
+  <div class="ui-input form-row">
+    <label for="">Name</label>
     <input ng-model="vm.segment.name" type="text">
   </div>
-  <div class="ui-input">
+  <div class="ui-input form-row">
+    <label for="">Size</label>
     <input ng-model="vm.segment.size" type="text">
   </div>
-  <tags-input ng-model="vm.segment.tags">
+  <tags-input ng-model="vm.segment.tags" class="form-row">
     <auto-complete source="vm.loadTags($query)"></auto-complete>
   </tags-input>
-  <a ng-click="vm.updateSegment(vm.segment.id)">Update</a>
+  <a ng-click="vm.updateSegment(vm.segment.id)" class="btn btn--default">Update</a>
 
 </fieldset>
